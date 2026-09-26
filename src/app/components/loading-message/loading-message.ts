@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-loading-message',
-  styleUrl: './loading-message.css',
-  templateUrl: './loading-message.html',
+  template: `<p class="message">Cargando...</p>`,
+  styles: `.message { text-align: center; color: var(--muted); padding: 40px; }`
 })
 export class LoadingMessage {}
