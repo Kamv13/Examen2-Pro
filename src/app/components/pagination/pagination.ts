@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-pagination',
-  styleUrl: './pagination.css',
   templateUrl: './pagination.html',
+  styleUrl: './pagination.css'
 })
-export class Pagination {}
+export class Pagination {
+  page = input.required<number>();
+  totalPages = input.required<number>();
+  pageChange = output<number>();
+}

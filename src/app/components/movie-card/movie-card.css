@@ -1,0 +1,45 @@
+.card {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.poster {
+  position: relative;
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.rating {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.info {
+  padding: 10px;
+}
+
+h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+span {
+  color: var(--muted);
+  font-size: 13px;
+}
