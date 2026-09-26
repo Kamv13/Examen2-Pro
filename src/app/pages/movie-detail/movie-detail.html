@@ -1,1 +1,44 @@
-<p>movie-detail works!</p>
+@if (movie(); as item) {
+  <article>
+    @if (item.backdrop) {
+      <div class="backdrop" [style.background-image]="'url(' + item.backdrop + ')'"></div>
+    }
+
+    <div class="content">
+      <img class="poster" [src]="item.poster" [alt]="item.title" />
+
+      <div class="info">
+        <button (click)="goBack()">Volver</button>
+        <h1>{{ item.title }} <span class="year">({{ item.year }})</span></h1>
+
+        @if (item.tagline) {
+          <p class="tagline">{{ item.tagline }}</p>
+        }
+
+        <div class="meta">
+          <app-rating-badge [rating]="item.rating" />
+          <span>{{ item.voteCount }} votos</span>
+          <span>{{ item.runtime }}</span>
+          <span>{{ item.releaseDate }}</span>
+        </div>
+
+        <div class="genres">
+          @for (genre of item.genres; track genre) {
+            <span class="genre">{{ genre }}</span>
+          }
+        </div>
+
+        <h2>Sinopsis</h2>
+        <p>{{ item.overview }}</p>
+
+        @if (item.homepage) {
+          <a [href]="item.homepage" target="_blank">Sitio oficial</a>
+        }
+      </div>
+    </div>
+  </article>
+} @else if (errorMessage()) {
+  <p class="error">{{ errorMessage() }}</p>
+} @else {
+  <app-loading-message />
+}
