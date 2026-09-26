@@ -80,3 +80,21 @@ h1 {
     padding-top: 0;
   }
 }
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 15px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.back-button:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateX(-4px);
+}
